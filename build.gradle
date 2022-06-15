@@ -23,18 +23,18 @@ allprojects {
     }
 }
 
-def getReleaseVersionCode() {
-    def versionCode = (int) (new Date().getTime() / 1000)
-    println('versionCode: ' + versionCode)
-    return versionCode
-}
-
-def getReleaseVersionName() {
-    def baseline = '1.6.8'
-    def versionName = baseline + new Date().format('(yyMMdd)')
-    println('versionName: ' + versionName)
-    return versionName
-}
+// def getReleaseVersionCode() {
+//     def versionCode = (int) (new Date().getTime() / 1000)
+//     println('versionCode: ' + versionCode)
+//     return versionCode
+// }
+//
+// def getReleaseVersionName() {
+//     def baseline = '1.6.8'
+//     def versionName = baseline + new Date().format('(yyMMdd)')
+//     println('versionName: ' + versionName)
+//     return versionName
+// }
 
 def localProperties = new Properties()
 def localPropertiesFile = new File(rootDir.getAbsolutePath(), 'local.properties')
@@ -55,8 +55,8 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode getReleaseVersionCode()
-        versionName getReleaseVersionName()
+        versionCode 1
+        versionName "1.6.8-mod"
         ndk {
             abiFilters 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a'
         }
