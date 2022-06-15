@@ -545,7 +545,7 @@ public class MainActivity extends BaseGameActivity implements
         if (this.mEngine == null) {
             return;
         }
-
+        Toast.makeText(this,"modded by thatOneArchUser",Toast.LENGTH_LONG).show();
         if (BuildConfig.DEBUG) {
             //Toast.makeText(this,"this is debug version",Toast.LENGTH_LONG).show();
             try {
