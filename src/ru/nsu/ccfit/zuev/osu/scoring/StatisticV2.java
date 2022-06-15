@@ -336,11 +336,10 @@ public class StatisticV2 implements Serializable {
         if ((hit300) / (float) notes > 0.6f) {
             return "C";
         }
-//        if ((hit300) / (float) notes > 0.5f){
-//            return "D";
-//        }
-//        return "F";
-        return "D";
+       if ((hit300) / (float) notes > 0.5f){
+           return "D";
+       }
+       return "F";
     }
     public void setMark(String mark) {
         this.mark = mark;
