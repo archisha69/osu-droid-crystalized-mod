@@ -78,7 +78,8 @@ public class Statistic implements Serializable {
     public int getAutoTotalScore() {
         float mult = 1;
         if (mod.contains(GameMod.MOD_EASY)) {
-            mult *= 0.5f;
+            //mult *= 0.5f;
+            mult *= 1;
         }
         if (mod.contains(GameMod.MOD_NOFAIL)) {
             mult *= 0.5f;
@@ -99,10 +100,12 @@ public class Statistic implements Serializable {
             mult *= 1.12f;
         }
         if (mod.contains(GameMod.MOD_HALFTIME)) {
-            mult *= 0.3f;
+            //mult *= 0.3f;
+            mult *= 1;
         }
         if (mod.contains(GameMod.MOD_REALLYEASY)) {
-            mult *= 0.4f;
+            //mult *= 0.4f;
+            mult *= 1;
         }
         return (int) (totalScore * mult);
     }
@@ -187,17 +190,26 @@ public class Statistic implements Serializable {
 
     public String getMark() {
         boolean isH = false;
+        boolean hasAlwaysXScoreMod = false;
         forcycle:
         for (final GameMod m : mod) {
             switch (m) {
                 case MOD_HIDDEN:
                     isH = true;
-                    break forcycle;
+                    //break forcycle;
+                case MOD_ALWAYSX:
+                    hasAlwaysXScoreMod = true;
+                    //break forcycle;
                 default:
                     break;
             }
         }
-
+        if (hasAlwaysXScoreMod) {
+            if (isH) {
+                return "XH";
+            }
+            return "X";
+        }
         if (hit100 == 0 && hit100k == 0 && hit50 == 0 && misses == 0) {
             if (isH) {
                 return "XH";
@@ -222,6 +234,10 @@ public class Statistic implements Serializable {
         if ((hit300) / (float) notes > 0.6f) {
             return "C";
         }
+//        if ((hit300) / (float) notes > 0.5f){
+//            return "D";
+//        }
+//        return "F";
         return "D";
     }
 
