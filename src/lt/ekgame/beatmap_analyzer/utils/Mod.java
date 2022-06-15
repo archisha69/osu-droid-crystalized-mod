@@ -2,19 +2,21 @@ package lt.ekgame.beatmap_analyzer.utils;
 
 public enum Mod {
 
-    NO_FAIL(0, "No Fail", "nf"),
+    NO_FAIL(0, "No Fail", "nf", false),
     EASY(1, "Easy", "ez"),
     HIDDEN(3, "Hidden", "hd"),
     HARDROCK(4, "Hardrock", "hr"),
     SUDDEN_DEATH(5, "Sudden Death", "sd"),
     DOUBLE_TIME(6, "Double Time", "dt"),
-    RELAX(7, "Relax", "rx", false),
+    RELAX(7, "Relax", "rx"),
     HALF_TIME(8, "Half Time", "ht"),
     NIGHTCORE(9, "Nightcore", "nc"),
     FLASHLIGHT(10, "Flashlight", "fl"),
-    AUTOPLAY(11, "Autoplay", "ap", false),
+    AUTOPLAY(11, "Autoplay", "ap"),
     SPUN_OUT(12, "Spun Out", "so"),
-    AUTOPILOT(13, "Autopilot", "ap", false);
+    AUTOPILOT(13, "Autopilot", "ap"),
+    SCOREHAX(14, "Score Hack", "sh", false),
+    ALWAYSX(15, "Always SS", "ax", false);
 
     private int offset;
     private String name, shortName;
