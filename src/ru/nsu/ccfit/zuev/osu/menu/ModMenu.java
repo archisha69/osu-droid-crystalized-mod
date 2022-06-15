@@ -127,6 +127,8 @@ public class ModMenu implements IModSwitcher {
         addButton(offset + offsetGrowth, Config.getRES_HEIGHT() / 2 - button.getHeight() * 3, "selection-mod-nofail", GameMod.MOD_NOFAIL);
         addButton(offset + offsetGrowth * 2, Config.getRES_HEIGHT() / 2 - button.getHeight() * 3, "selection-mod-halftime", GameMod.MOD_HALFTIME);
         addButton(offset + offsetGrowth * 3, Config.getRES_HEIGHT() / 2 - button.getHeight() * 3, "selection-mod-reallyeasy", GameMod.MOD_REALLYEASY);
+        addButton(offset + offsetGrowth * 4, Config.getRES_HEIGHT() / 2 - button.getHeight() * 3, "selection-mod-scorehax", GameMod.MOD_SCOREHAX);
+        addButton(offset + offsetGrowth * 5, Config.getRES_HEIGHT() / 2 - button.getHeight() * 3, "selection-mod-alwaysx", GameMod.MOD_ALWAYSX);
 
         //line 2
         addButton(offset, Config.getRES_HEIGHT() / 2 - button.getHeight() / 2, "selection-mod-hardrock", GameMod.MOD_HARDROCK);
