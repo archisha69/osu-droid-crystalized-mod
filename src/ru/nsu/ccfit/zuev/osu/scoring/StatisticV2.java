@@ -294,20 +294,24 @@ public class StatisticV2 implements Serializable {
         if (mark != null)
             return mark;
         boolean isH = false;
+        boolean hasAlwaysXScoreMod = false;
         forcycle:
         for (final GameMod m : mod) {
             switch (m) {
                 case MOD_HIDDEN:
                     isH = true;
-                    break forcycle;
-                case MOD_FLASHLIGHT:
-                    isH = true;
-                    break forcycle;
+                case MOD_ALWAYSX:
+                    hasAlwaysXScoreMod = true;
                 default:
                     break;
             }
         }
-
+        if (hasAlwaysXScoreMod) {
+            if (isH) {
+                return "XH";
+            }
+            return "X";
+        }
         if (hit100 == 0 && hit50 == 0 && misses == 0) {
             if (isH) {
                 return "XH";
@@ -332,9 +336,12 @@ public class StatisticV2 implements Serializable {
         if ((hit300) / (float) notes > 0.6f) {
             return "C";
         }
+//        if ((hit300) / (float) notes > 0.5f){
+//            return "D";
+//        }
+//        return "F";
         return "D";
     }
-
     public void setMark(String mark) {
         this.mark = mark;
     }
@@ -721,7 +728,8 @@ public class StatisticV2 implements Serializable {
         if (multi > 1){
             multi = 1.0f + (multi - 1.0f) * 0.24f;
         } else if (multi < 1){
-            multi = (float) Math.pow(0.3, (1.0 - multi) * 4);
+            //multi = (float) Math.pow(0.3, (1.0 - multi) * 4);
+            multi *= 1;
         } else if (multi == 1){
             return 1f;
         }
@@ -729,7 +737,8 @@ public class StatisticV2 implements Serializable {
             multi /= 1.12f;
         }
         if (mod.contains(GameMod.MOD_HALFTIME)){
-            multi /= 0.3f;
+            //multi /= 0.3f;
+            multi *= 1;
         }
         return multi;
     }
