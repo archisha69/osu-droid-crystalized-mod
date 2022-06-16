@@ -336,7 +336,7 @@ public class StatisticV2 implements Serializable {
         if ((hit300) / (float) notes > 0.6f) {
             return "C";
         }
-       if ((hit300) / (float) notes > 0.5f){
+       if ((hit300) / (float) notes > 0.3f){
            return "D";
        }
        return "F";
