@@ -16,7 +16,8 @@ public enum Mod {
     SPUN_OUT(12, "Spun Out", "so"),
     AUTOPILOT(13, "Autopilot", "ap"),
     SCOREHAX(14, "Score Hack", "sh", false),
-    ALWAYSX(15, "Always SS", "ax", false);
+    ALWAYSX(15, "Always SS", "ax", false),
+    PRACTICE(16, "practice", "pt", false);
 
     private int offset;
     private String name, shortName;
