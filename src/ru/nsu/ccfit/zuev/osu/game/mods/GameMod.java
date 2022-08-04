@@ -10,7 +10,7 @@ public enum GameMod {
     MOD_EASY("es", 1),
     MOD_HARDROCK("hr", 1.06f),
     MOD_HIDDEN("hd", 1.06f),
-    MOD_RELAX("relax", 1),
+    MOD_RELAX("rx", 1),
     MOD_AUTOPILOT("ap", 1),
     MOD_DOUBLETIME("dt", 1.12f),
     MOD_NIGHTCORE("nc", 1.12f),
@@ -24,7 +24,8 @@ public enum GameMod {
     MOD_SCOREV2("v2", 1),
     MOD_SPEEDUP("su", 1.06f),
     MOD_SCOREHAX("sh", 69420f, true), //custom mod for getting more score
-    MOD_ALWAYSX("ax", 1, true); //custom mod for getting always ss
+    MOD_ALWAYSX("ax", 1, true),//custom mod for getting always ss
+    MOD_PRACTICE("pr", 1, true); //practice mod
 
     public final String shortName;
     public final float scoreMultiplier;
