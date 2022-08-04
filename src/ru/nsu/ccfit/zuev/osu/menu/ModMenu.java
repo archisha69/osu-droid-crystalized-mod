@@ -129,6 +129,7 @@ public class ModMenu implements IModSwitcher {
         addButton(offset + offsetGrowth * 3, Config.getRES_HEIGHT() / 2 - button.getHeight() * 3, "selection-mod-reallyeasy", GameMod.MOD_REALLYEASY);
         addButton(offset + offsetGrowth * 4, Config.getRES_HEIGHT() / 2 - button.getHeight() * 3, "selection-mod-scorehax", GameMod.MOD_SCOREHAX);
         addButton(offset + offsetGrowth * 5, Config.getRES_HEIGHT() / 2 - button.getHeight() * 3, "selection-mod-alwaysx", GameMod.MOD_ALWAYSX);
+        addButton(offset + offsetGrowth * 6, Config.getRES_HEIGHT() / 2 - button.getHeight() * 3, "selection-mod-practice", GameMod.MOD_PRACTICE);
 
         //line 2
         addButton(offset, Config.getRES_HEIGHT() / 2 - button.getHeight() / 2, "selection-mod-hardrock", GameMod.MOD_HARDROCK);
@@ -272,15 +273,16 @@ public class ModMenu implements IModSwitcher {
 
             handleModFlags(flag, GameMod.MOD_HARDROCK, new GameMod[]{GameMod.MOD_EASY});
             handleModFlags(flag, GameMod.MOD_EASY, new GameMod[]{GameMod.MOD_HARDROCK});
-            handleModFlags(flag, GameMod.MOD_AUTOPILOT, new GameMod[]{GameMod.MOD_RELAX, GameMod.MOD_PERFECT, GameMod.MOD_SUDDENDEATH, GameMod.MOD_AUTO, GameMod.MOD_NOFAIL});
-            handleModFlags(flag, GameMod.MOD_AUTO, new GameMod[]{GameMod.MOD_RELAX, GameMod.MOD_AUTOPILOT, GameMod.MOD_PERFECT, GameMod.MOD_SUDDENDEATH});
-            handleModFlags(flag, GameMod.MOD_RELAX, new GameMod[]{GameMod.MOD_AUTO, GameMod.MOD_PERFECT, GameMod.MOD_SUDDENDEATH, GameMod.MOD_NOFAIL, GameMod.MOD_AUTOPILOT});
+            handleModFlags(flag, GameMod.MOD_AUTOPILOT, new GameMod[]{GameMod.MOD_RELAX, GameMod.MOD_PERFECT, GameMod.MOD_SUDDENDEATH, GameMod.MOD_AUTO, GameMod.MOD_NOFAIL, GameMod.MOD_PRACTICE});
+            handleModFlags(flag, GameMod.MOD_AUTO, new GameMod[]{GameMod.MOD_RELAX, GameMod.MOD_AUTOPILOT, GameMod.MOD_PERFECT, GameMod.MOD_SUDDENDEATH, GameMod.MOD_PRACTICE});
+            handleModFlags(flag, GameMod.MOD_RELAX, new GameMod[]{GameMod.MOD_AUTO, GameMod.MOD_PERFECT, GameMod.MOD_SUDDENDEATH, GameMod.MOD_NOFAIL, GameMod.MOD_AUTOPILOT, GameMod.MOD_PRACTICE});
             handleModFlags(flag, GameMod.MOD_DOUBLETIME, new GameMod[]{GameMod.MOD_NIGHTCORE, GameMod.MOD_HALFTIME});
             handleModFlags(flag, GameMod.MOD_NIGHTCORE, new GameMod[]{GameMod.MOD_DOUBLETIME, GameMod.MOD_HALFTIME});
             handleModFlags(flag, GameMod.MOD_HALFTIME, new GameMod[]{GameMod.MOD_DOUBLETIME, GameMod.MOD_NIGHTCORE});
-            handleModFlags(flag, GameMod.MOD_SUDDENDEATH, new GameMod[]{GameMod.MOD_NOFAIL, GameMod.MOD_PERFECT, GameMod.MOD_AUTOPILOT, GameMod.MOD_RELAX, GameMod.MOD_AUTO});
-            handleModFlags(flag, GameMod.MOD_PERFECT, new GameMod[]{GameMod.MOD_NOFAIL, GameMod.MOD_SUDDENDEATH, GameMod.MOD_AUTOPILOT, GameMod.MOD_RELAX, GameMod.MOD_AUTO});
-            handleModFlags(flag, GameMod.MOD_NOFAIL, new GameMod[]{GameMod.MOD_PERFECT, GameMod.MOD_SUDDENDEATH, GameMod.MOD_AUTOPILOT, GameMod.MOD_RELAX});
+            handleModFlags(flag, GameMod.MOD_SUDDENDEATH, new GameMod[]{GameMod.MOD_NOFAIL, GameMod.MOD_PERFECT, GameMod.MOD_AUTOPILOT, GameMod.MOD_RELAX, GameMod.MOD_AUTO, GameMod.MOD_PRACTICE});
+            handleModFlags(flag, GameMod.MOD_PERFECT, new GameMod[]{GameMod.MOD_NOFAIL, GameMod.MOD_SUDDENDEATH, GameMod.MOD_AUTOPILOT, GameMod.MOD_RELAX, GameMod.MOD_AUTO, GameMod.MOD_PRACTICE});
+            handleModFlags(flag, GameMod.MOD_NOFAIL, new GameMod[]{GameMod.MOD_PERFECT, GameMod.MOD_SUDDENDEATH, GameMod.MOD_AUTOPILOT, GameMod.MOD_RELAX, GameMod.MOD_PRACTICE});
+            handleModFlags(flag, GameMod.MOD_PRACTICE, new GameMod[]{GameMod.MOD_NOFAIL, GameMod.MOD_RELAX, GameMod.MOD_AUTO, GameMod.MOD_SUDDENDEATH, GameMod.MOD_PERFECT, GameMod.MOD_AUTOPILOT});
 
             if (modsRemoved) {
                 for (GameMod gameMod : modButtons.keySet()) {
